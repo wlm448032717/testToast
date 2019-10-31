@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-      
+      <div @click="xxx">点击</div>
   </div>
 </template>
 
@@ -14,7 +14,20 @@ export default {
   },
  
   mounted(){
-    this.$toast('this is toast!')
+    
+
+  },
+  methods:{
+    xxx(){
+      this.$toast('this is toast!',{
+      closeButton:{
+        text:'我知道啦',
+        callback(){
+          console.log('回调 ');
+        }
+      }
+    })
+    }
   }
 }
 </script>
